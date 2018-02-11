@@ -21,7 +21,7 @@ This are a simple CRUD RESTful api implementation with Golang
 ## Create Book
 `POST api/books`
 
-<b> Request sample </b>
+<b> Request sample </b><br/>
 `` {
    "Isbn":"4545454",
    "Title":"Book Three",
@@ -34,7 +34,7 @@ This are a simple CRUD RESTful api implementation with Golang
 ## Update Book
 `PUT api/books/{id}`
 
-<b> Request sample </b>
+<b> Request sample </b><br/>
 `` {
    "Isbn":"4545454",
    "Title":"Updated Title",
