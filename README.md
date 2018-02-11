@@ -23,9 +23,9 @@ POST api/books
 
 # Request sample
 `` {
-   "isbn":"4545454",
-   "title":"Book Three",
-   "author":{"firstname":"Jenkins",  "lastname":"Sholo"}
+   "Isbn":"4545454",
+   "Title":"Book Three",
+   "Author":{"firstname":"Jenkins",  "lastname":"Sholo"}
   }``
 
 Update Book
@@ -33,8 +33,8 @@ PUT api/books/{id}
 
 # Request sample
 `` {
-   "isbn":"4545454",
-   "title":"Updated Title",
-   "author":{"firstname":"Peter",  "lastname":"Kirk"}
+   "Isbn":"4545454",
+   "Title":"Updated Title",
+   "Author":{"firstname":"Peter",  "lastname":"Kirk"}
   }``
 
