@@ -19,16 +19,16 @@ This are a simple CRUD RESTful api implementation with Golang
 `DELETE api/books/{id}`
 
 ## Create Book
-POST api/books
+`POST api/books`
 
 # Request sample
 `` {
    "Isbn":"4545454",
    "Title":"Book Three",
-   "Author":{
-      "firstname":"Jenkins",
-      "lastname":"Sholo"
-   }
+   "Author": {
+                "firstname":"Jenkins",
+                "lastname":"Sholo"
+             }
   }``
 
 ## Update Book
@@ -38,9 +38,9 @@ POST api/books
 ``` {
    "Isbn":"4545454",
    "Title":"Updated Title",
-   "Author":{
-      "firstname":"Peter",  
-      "lastname":"Kirk"
-   }
+   "Author": {
+               "firstname":"Peter",  
+               "lastname":"Kirk"
+            }
   }```
 
