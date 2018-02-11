@@ -94,7 +94,7 @@ func deleteBook(w http.ResponseWriter, router *http.Request) {
 }
 
 func main() {
-	// Init router
+	// Init routers
 	router := mux.NewRouter()
 	// Mock Data - @todo - implement DB soon..
 	books = append(books, Book{ID: "1", Isbn: "44873", Title: "Book One", Author: &Author{Firstname: "Fidel", Lastname: "Ramadhan"}})
