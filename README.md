@@ -22,19 +22,19 @@ This are a simple CRUD RESTful api implementation with Golang
 POST api/books
 
 # Request sample
-`` {
+``` {
    "Isbn":"4545454",
    "Title":"Book Three",
    "Author":{"firstname":"Jenkins",  "lastname":"Sholo"}
-  }``
+  }```
 
-Update Book
-PUT api/books/{id}
+## Update Book
+`PUT api/books/{id}`
 
 # Request sample
-`` {
+``` {
    "Isbn":"4545454",
    "Title":"Updated Title",
    "Author":{"firstname":"Peter",  "lastname":"Kirk"}
-  }``
+  }```
 
