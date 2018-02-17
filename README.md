@@ -1,4 +1,4 @@
-# bookshelf-golang-api
+# bookmarket-golang-api
 This are a simple CRUD RESTful api implementation with Golang
 
 
