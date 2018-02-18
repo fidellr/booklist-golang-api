@@ -33,15 +33,15 @@ func headerDRYclean(w http.ResponseWriter) {
 }
 
 // Get All Books
-func getBooks(w http.ResponseWriter, router *http.Request) {
+func getBooks(w http.ResponseWriter, req *http.Request) {
 	headerDRYclean(w)
 	json.NewEncoder(w).Encode(books)
 }
 
 // Get Single Book
-func getBook(w http.ResponseWriter, router *http.Request) {
+func getBook(w http.ResponseWriter, req *http.Request) {
 	headerDRYclean(w)
-	params := mux.Vars(router) //Get params
+	params := mux.Vars(req) //Get params
 	// Loop through books and find it with id
 	for _, item := range books {
 		if item.ID == params["id"] {
@@ -53,24 +53,24 @@ func getBook(w http.ResponseWriter, router *http.Request) {
 }
 
 // Create A New Book
-func createBook(w http.ResponseWriter, router *http.Request) {
+func createBook(w http.ResponseWriter, req *http.Request) {
 	headerDRYclean(w)
 	var book Book
-	_ = json.NewDecoder(router.Body).Decode(&book)
+	_ = json.NewDecoder(req.Body).Decode(&book)
 	book.ID = strconv.Itoa(rand.Intn(1000000)) // Mock ID -  (not safe for production)
 	books = append(books, book)
 	json.NewEncoder(w).Encode(book)
 }
 
 // Update The Book
-func updateBook(w http.ResponseWriter, router *http.Request) {
+func updateBook(w http.ResponseWriter, req *http.Request) {
 	headerDRYclean(w)
-	params := mux.Vars(router)
+	params := mux.Vars(req)
 	for index, item := range books {
 		if item.ID == params["id"] {
 			books = append(books[:index], books[index+1:]...)
 			var book Book
-			_ = json.NewDecoder(router.Body).Decode(&book)
+			_ = json.NewDecoder(req.Body).Decode(&book)
 			book.ID = params["id"]
 			books = append(books, book)
 			json.NewEncoder(w).Encode(book)
@@ -81,9 +81,9 @@ func updateBook(w http.ResponseWriter, router *http.Request) {
 }
 
 // Delete The Book
-func deleteBook(w http.ResponseWriter, router *http.Request) {
+func deleteBook(w http.ResponseWriter, req *http.Request) {
 	headerDRYclean(w)
-	params := mux.Vars(router)
+	params := mux.Vars(req)
 	for index, item := range books {
 		if item.ID == params["id"] {
 			books = append(books[:index], books[index+1:]...)
